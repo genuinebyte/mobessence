@@ -1,2 +1,4 @@
+# The time it takes to distill essence in a furnace, in seconds.
 smelt-time: 3600
-drop-chance: 1
+# The chance essence will drop from a mob. 1 of drop-chance mobs will drop essence.
+drop-chance: 1024
