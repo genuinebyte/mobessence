@@ -11,12 +11,12 @@ once again walk the earth.
 When a mob dies, it has a chance to drop its essence. This chance is configurable and defaults
 to every 1 in 1024 mobs.
 
-### Distillation of Essence
-A mob's essence may be smelted in a furnace to yield it's spawn egg. The amount of time it takes is
-configurable, but defaults to an hour.
+### Infusing Essenec into Eggs
+A method of infusing chicken eggs with essence has come to light. In the center of your workbench,
+you place the chicken egg. In the immediatly surrounding squares is where you place your essence.
+The last four spots left are for the bone meal for the essence to cultivate. You can see this below.
 
-NOTE: There is a bug with the filling of the furnace's arrow. At higher smelt times, it will fill in
-about 5 minutes, and then stay full. It's still smelting, just the UI is broken.
+![workbench-recipe](docs/recipe.png)
 
 ### Configuration
 There are two configuration values, `smelt-time` and `drop-chance`. They control how long it takes

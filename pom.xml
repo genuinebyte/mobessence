@@ -6,7 +6,7 @@
   <groupId>dev.genbyte.mobessence</groupId>
   <artifactId>MobEssence</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
 
   <name>MobEssence</name>
   <description>Every mob has a life force, sometimes they drop it</description>
