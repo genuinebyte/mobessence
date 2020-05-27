@@ -1,7 +1,6 @@
 package dev.genbyte.mobessence;
 
 import java.util.Optional;
-import java.util.logging.Level;
 
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;

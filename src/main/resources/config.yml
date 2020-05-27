@@ -1,4 +1,3 @@
-# The time it takes to distill essence in a furnace, in seconds.
-smelt-time: 3600
-# The chance essence will drop from a mob. 1 of drop-chance mobs will drop essence.
-drop-chance: 1024
+# The chance essence will drop from a mob. 1 of drop-chance mobs will drop essence. Four essence
+# are required to make an egg, so essentially an egg is attained 1 of (4 * drop-chance) mobs killed.
+drop-chance: 256

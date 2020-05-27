@@ -9,7 +9,7 @@ once again walk the earth.
 
 ### Attaining Essence
 When a mob dies, it has a chance to drop its essence. This chance is configurable and defaults
-to every 1 in 1024 mobs.
+to every 1 in 256 mobs.
 
 ### Infusing Essenec into Eggs
 A method of infusing chicken eggs with essence has come to light. In the center of your workbench,
@@ -19,12 +19,9 @@ The last four spots left are for the bone meal for the essence to cultivate. You
 ![workbench-recipe](docs/recipe.png)
 
 ### Configuration
-There are two configuration values, `smelt-time` and `drop-chance`. They control how long it takes
-to distill essence, and how often it drops, respectively. 
-
-`smelt-time` is given in seconds and defaults to `3600`.
+There is one configuration option, `drop-chance`.
 
 `drop-chance` is the inverse of the value you provie. So if you change it to 100 then there is a 
-1 in 100 chance a mob will drop its essence on death. This value defaults to `1024`.
+1 in 100 chance a mob will drop its essence on death. This value defaults to `256`.
 
 You can view the default configuration [here](src/main/resources/config.yml).
