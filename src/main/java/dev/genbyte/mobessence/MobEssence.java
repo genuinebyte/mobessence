@@ -1,7 +1,5 @@
 package dev.genbyte.mobessence;
 
-import java.util.logging.Level;
-
 import org.bukkit.plugin.java.JavaPlugin;
 
 import dev.genbyte.mobessence.stats.StatCommand;
