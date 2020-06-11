@@ -1,11 +1,14 @@
 package dev.genbyte.mobessence;
 
+import java.util.logging.Level;
+
 import org.bukkit.plugin.java.JavaPlugin;
 
 import dev.genbyte.mobessence.stats.StatCommand;
 import dev.genbyte.mobessence.stats.StatFile;
 
 public class MobEssence extends JavaPlugin {
+	public boolean requirePlayerKill;
 	public int dropChance;
 	public StatFile stats;
 
@@ -31,5 +34,6 @@ public class MobEssence extends JavaPlugin {
 	private void readConfig() {
 		this.saveDefaultConfig();
 		dropChance = this.getConfig().getInt("drop-chance");
+		requirePlayerKill = this.getConfig().getBoolean("require-player-kill");
 	}
 }
