@@ -7,11 +7,8 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.PrepareItemCraftEvent;
-import org.bukkit.event.inventory.InventoryType.SlotType;
 import org.bukkit.inventory.CraftingInventory;
-import org.bukkit.inventory.FurnaceInventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.Recipe;
 import org.bukkit.inventory.ShapedRecipe;
@@ -36,28 +33,6 @@ public class CraftHandler implements Listener {
 				.setIngredient('M', Material.BONE_MEAL)
 				.setIngredient('e', Material.EGG);
 		me.getServer().addRecipe(essence_infusion);
-	}
-
-	@EventHandler
-	public void onInventoryClick(InventoryClickEvent event) {
-		if (event.getInventory() instanceof FurnaceInventory) {
-			if (event.isShiftClick() && event.getCurrentItem().getType() == Material.POTION) {
-				FurnaceInventory inv = (FurnaceInventory) event.getInventory();
-
-				if (!essenceOf(event.getCurrentItem()).isPresent() || inv.getSmelting() != null) {
-					event.setCancelled(true);
-				} else {
-					inv.setSmelting(event.getCurrentItem());
-					event.setCurrentItem(null);
-					event.setCancelled(true);
-				}
-			} else if (event.getSlotType() == SlotType.CRAFTING &&
-				event.getCursor().getType() == Material.POTION &&
-				!essenceOf(event.getCursor()).isPresent()
-			) {
-				event.setCancelled(true);
-			}
-		}
 	}
 
 	@EventHandler

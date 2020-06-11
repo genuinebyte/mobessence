@@ -11,12 +11,16 @@ import org.bukkit.event.entity.CreatureSpawnEvent.SpawnReason;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.metadata.FixedMetadataValue;
 
+import dev.genbyte.mobessence.stats.StatFile;
+
 public class MobHandler implements Listener {
 	private MobEssence me;
+	private StatFile stats;
 	private Random rand;
 
 	public MobHandler(MobEssence me) {
 		this.me = me;
+		this.stats = me.stats;
 		rand = new Random();
 	}
 
@@ -24,6 +28,7 @@ public class MobHandler implements Listener {
 	public void onEntityDeath(EntityDeathEvent event) {
 		int randInt = rand.nextInt(me.dropChance);
 		boolean dropFlag = me.dropChance != 0 && randInt == me.dropChance-1;
+		stats.logNumber(randInt);
 
 		if (dropFlag && !event.getEntity().hasMetadata("no_essence")) {
 			Optional<ItemStack> opstack = EssenceHelper.createEssence(event.getEntity());

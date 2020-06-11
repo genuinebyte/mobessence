@@ -6,3 +6,15 @@ website: ${url}
 
 api-version: 1.13
 main: ${mainClass}
+
+commands:
+  mestats:
+    usage: /mestats
+    description: Print the random number stats from MobEssence
+    permission: mobessence.mestats
+    permission-message: You do not have permission to perform this command.
+
+permissions:
+  mobessence.mestats:
+    description: Allows you to get the random number distribution of dropped essence
+    default: op
