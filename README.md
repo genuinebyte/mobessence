@@ -1,8 +1,4 @@
 # MobEssence
-[todo.sr.ht][tickets]
-
-[tickets]: https://todo.sr.ht/~genbyte/mobessence
-
 Everything living has a life force, it's what makes them what they are. We call it essence, and if
 we're able to extract it as they die, then it can be distilled and injected into an egg so they may
 once again walk the earth.
