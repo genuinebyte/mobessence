@@ -76,17 +76,20 @@ public class EssenceHelper {
 		ret.put(EntityType.FOX, Material.FOX_SPAWN_EGG);
 		ret.put(EntityType.GHAST, Material.GHAST_SPAWN_EGG);
 		ret.put(EntityType.GUARDIAN, Material.GUARDIAN_SPAWN_EGG);
+		ret.put(EntityType.HOGLIN, Material.HOGLIN_SPAWN_EGG);
 		ret.put(EntityType.HORSE, Material.HORSE_SPAWN_EGG);
 		ret.put(EntityType.HUSK, Material.HUSK_SPAWN_EGG);
 		ret.put(EntityType.LLAMA, Material.LLAMA_SPAWN_EGG);
 		ret.put(EntityType.MAGMA_CUBE, Material.MAGMA_CUBE_SPAWN_EGG);
-		ret.put(EntityType.MUSHROOM_COW, Material.MOOSHROOM_SPAWN_EGG);	// Changed from generated
+		ret.put(EntityType.MUSHROOM_COW, Material.MOOSHROOM_SPAWN_EGG);	// Changed from generator
 		ret.put(EntityType.MULE, Material.MULE_SPAWN_EGG);
 		ret.put(EntityType.OCELOT, Material.OCELOT_SPAWN_EGG);
 		ret.put(EntityType.PANDA, Material.PANDA_SPAWN_EGG);
 		ret.put(EntityType.PARROT, Material.PARROT_SPAWN_EGG);
 		ret.put(EntityType.PHANTOM, Material.PHANTOM_SPAWN_EGG);
 		ret.put(EntityType.PIG, Material.PIG_SPAWN_EGG);
+		ret.put(EntityType.PIGLIN_BRUTE, Material.PIGLIN_BRUTE_SPAWN_EGG);
+		ret.put(EntityType.PIGLIN, Material.PIGLIN_SPAWN_EGG);
 		ret.put(EntityType.PILLAGER, Material.PILLAGER_SPAWN_EGG);
 		ret.put(EntityType.POLAR_BEAR, Material.POLAR_BEAR_SPAWN_EGG);
 		ret.put(EntityType.PUFFERFISH, Material.PUFFERFISH_SPAWN_EGG);
@@ -102,6 +105,7 @@ public class EssenceHelper {
 		ret.put(EntityType.SPIDER, Material.SPIDER_SPAWN_EGG);
 		ret.put(EntityType.SQUID, Material.SQUID_SPAWN_EGG);
 		ret.put(EntityType.STRAY, Material.STRAY_SPAWN_EGG);
+		ret.put(EntityType.STRIDER, Material.STRIDER_SPAWN_EGG);
 		ret.put(EntityType.TRADER_LLAMA, Material.TRADER_LLAMA_SPAWN_EGG);
 		ret.put(EntityType.TROPICAL_FISH, Material.TROPICAL_FISH_SPAWN_EGG);
 		ret.put(EntityType.TURTLE, Material.TURTLE_SPAWN_EGG);
@@ -112,10 +116,11 @@ public class EssenceHelper {
 		ret.put(EntityType.WITCH, Material.WITCH_SPAWN_EGG);
 		ret.put(EntityType.WITHER_SKELETON, Material.WITHER_SKELETON_SPAWN_EGG);
 		ret.put(EntityType.WOLF, Material.WOLF_SPAWN_EGG);
+		ret.put(EntityType.ZOGLIN, Material.ZOGLIN_SPAWN_EGG);
 		ret.put(EntityType.ZOMBIE_HORSE, Material.ZOMBIE_HORSE_SPAWN_EGG);
-		ret.put(EntityType.PIG_ZOMBIE, Material.ZOMBIE_PIGMAN_SPAWN_EGG);	// Changed from generated
 		ret.put(EntityType.ZOMBIE, Material.ZOMBIE_SPAWN_EGG);
 		ret.put(EntityType.ZOMBIE_VILLAGER, Material.ZOMBIE_VILLAGER_SPAWN_EGG);
+		ret.put(EntityType.ZOMBIFIED_PIGLIN, Material.ZOMBIFIED_PIGLIN_SPAWN_EGG);
 
 		return ret;
 	}
@@ -123,8 +128,8 @@ public class EssenceHelper {
 	private static Optional<Material> entityMaterial(EntityType etype) {
 		Optional<Material> ret;
 		/*
-		EntityType enums taken (using javascript) from
-		https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html
+		EntityType enums taken the same way as createSpawnEggEntityMap, but
+		replacing that `ret +=` with `ret += "case " + typ + ":\n";`
 		*/
 		switch (etype) {
 			case BAT:
@@ -140,28 +145,26 @@ public class EssenceHelper {
 			case DONKEY:
 			case DROWNED:
 			case ELDER_GUARDIAN:
-			case ENDER_DRAGON:
 			case ENDERMAN:
 			case ENDERMITE:
 			case EVOKER:
 			case FOX:
 			case GHAST:
-			case GIANT:
 			case GUARDIAN:
+			case HOGLIN:
 			case HORSE:
 			case HUSK:
-			case ILLUSIONER:
-			case IRON_GOLEM:
 			case LLAMA:
 			case MAGMA_CUBE:
-			case MULE:
 			case MUSHROOM_COW:
+			case MULE:
 			case OCELOT:
 			case PANDA:
 			case PARROT:
 			case PHANTOM:
 			case PIG:
-			case PIG_ZOMBIE:
+			case PIGLIN_BRUTE:
+			case PIGLIN:
 			case PILLAGER:
 			case POLAR_BEAR:
 			case PUFFERFISH:
@@ -171,69 +174,30 @@ public class EssenceHelper {
 			case SHEEP:
 			case SHULKER:
 			case SILVERFISH:
-			case SKELETON:
 			case SKELETON_HORSE:
+			case SKELETON:
 			case SLIME:
-			case SNOWMAN:
 			case SPIDER:
 			case SQUID:
 			case STRAY:
+			case STRIDER:
 			case TRADER_LLAMA:
 			case TROPICAL_FISH:
 			case TURTLE:
 			case VEX:
 			case VILLAGER:
 			case VINDICATOR:
+			case WANDERING_TRADER:
 			case WITCH:
-			case WITHER:
 			case WITHER_SKELETON:
 			case WOLF:
-			case ZOMBIE:
+			case ZOGLIN:
 			case ZOMBIE_HORSE:
+			case ZOMBIE:
 			case ZOMBIE_VILLAGER:
+			case ZOMBIFIED_PIGLIN:
 				ret = Optional.of(Material.POTION);
 				break;
-			// Everything we don't want to make essence for
-			case AREA_EFFECT_CLOUD:
-			case ARMOR_STAND:
-			case ARROW:
-			case BOAT:
-			case DRAGON_FIREBALL:
-			case DROPPED_ITEM:
-			case EGG:
-			case ENDER_CRYSTAL:
-			case ENDER_PEARL:
-			case ENDER_SIGNAL:
-			case EVOKER_FANGS:
-			case EXPERIENCE_ORB:
-			case FALLING_BLOCK:
-			case FIREBALL:
-			case FIREWORK:
-			case FISHING_HOOK:
-			case ITEM_FRAME:
-			case LEASH_HITCH:
-			case LIGHTNING:
-			case LLAMA_SPIT:
-			case MINECART:
-			case MINECART_CHEST:
-			case MINECART_COMMAND:
-			case MINECART_FURNACE:
-			case MINECART_HOPPER:
-			case MINECART_MOB_SPAWNER:
-			case MINECART_TNT:
-			case PAINTING:
-			case PLAYER:
-			case PRIMED_TNT:
-			case SHULKER_BULLET:
-			case SMALL_FIREBALL:
-			case SNOWBALL:
-			case SPECTRAL_ARROW:
-			case SPLASH_POTION:
-			case THROWN_EXP_BOTTLE:
-			case TRIDENT:
-			case UNKNOWN:
-			case WANDERING_TRADER:
-			case WITHER_SKULL:
 			default:
 				ret = Optional.empty();
 		}
