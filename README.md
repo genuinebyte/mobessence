@@ -17,6 +17,13 @@ to cultivate. You can see this below.
 
 ![workbench-recipe](docs/recipe.png)
 
+## Download
+You can get the latest build from [**Curseforge**][curseforge] or on the
+[**GitHub releases page**][github-releases].
+
+[curseforge]: https://www.curseforge.com/minecraft/bukkit-plugins/mobessence
+[github-releases]: https://github.com/genuinebyte/mobessence/releases
+
 ## Configuration
 If you think something that isn't currently configurable should be, then leave
 an issue and I'll see if I can get it done.
