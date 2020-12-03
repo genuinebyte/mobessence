@@ -2,5 +2,5 @@
 # are required to make an egg, so essentially an egg is attained 1 of (4 * drop-chance) mobs killed.
 drop-chance: 256
 
-# If 'true', Essence will only drop when an Entitie's cause of death is a player
+# If 'true', Essence will only drop when an entity's cause of death is a player
 require-player-kill: true
