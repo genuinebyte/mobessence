@@ -8,16 +8,26 @@ When a mob dies, it has a chance to drop its essence. This chance is configurabl
 to every 1 in 256 mobs.
 
 ### Infusing Essence into Eggs
-A method of infusing chicken eggs with essence has come to light. In the center of your workbench,
-you place the chicken egg. In the immediately surrounding squares is where you place your essence.
-The last four spots left are for the bone meal for the essence to cultivate. You can see this below.
+A method of infusing chicken eggs with essence has come to light. It allows you to change the
+genetics of the egg so that it will spawn the mob that had its essence infused.
+
+In the center of your workbench you place the chicken egg. In the immediately surrounding squares
+is where you place your essence. The last four spots left are the bone meal for the essence
+to cultivate. You can see this below.
 
 ![workbench-recipe](docs/recipe.png)
 
-### Configuration
-There is one configuration option, `drop-chance`.
+## Configuration
+If you think something that isn't currently configurable should be, then leave
+an issue and I'll see if I can get it done.
 
-`drop-chance` is the inverse of the value you provide. So if you change it to 100 then there is a 
-1 in 100 chance a mob will drop its essence on death. This value defaults to `256`.
+**drop-chance**  
+Default: `256`
 
-You can view the default configuration [here](src/main/resources/config.yml).
+The chance essence will drop from a mob. 1 of drop-chance mobs will drop essence. Four essence
+are required to make an egg, so essentially an egg is attained 1 of (4 * drop-chance) mobs killed.
+
+**require-player-kill**  
+Default: `true`
+
+Should the player have to be the cause of the mob's death for it to drop essence?
