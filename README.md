@@ -17,6 +17,11 @@ to cultivate. You can see this below.
 
 ![workbench-recipe](docs/recipe.png)
 
+### Why?
+There is a Minecraft feature where if you right-click a spawner with a spawn egg, it will change to
+that type. I wanted to utilize this feature while trying to keep it as balanced as I can, and I
+think this plugin achieves this wonderfully.
+
 ## Download
 You can get the latest build from [**SpigotMC**][spigotmc] or on the
 [**GitHub releases page**][github-releases].
