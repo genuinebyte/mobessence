@@ -18,10 +18,11 @@ to cultivate. You can see this below.
 ![workbench-recipe](docs/recipe.png)
 
 ## Download
-You can get the latest build from [**Curseforge**][curseforge] or on the
+You can get the latest build from [**SpigotMC**][spigotmc] or on the
 [**GitHub releases page**][github-releases].
 
 [curseforge]: https://www.curseforge.com/minecraft/bukkit-plugins/mobessence
+[spigotmc]: https://www.spigotmc.org/resources/mobessence.86455/
 [github-releases]: https://github.com/genuinebyte/mobessence/releases
 
 ## Configuration
