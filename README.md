@@ -1,3 +1,7 @@
+# Inactive; Unmaintined
+
+This plugin is no longer maintined. It might still work for your version of the game. If you plan to use it, I recommend testing it first on an unimportant server. I don't think it'd be able to cause much damage, but it's better to be safe.
+
 # MobEssence
 Everything living has a life force, it's what makes them what they are. We call it essence, and if
 we're able to extract it as they die, then it can be distilled and injected into an egg so they may
